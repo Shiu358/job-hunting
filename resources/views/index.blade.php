@@ -11,10 +11,13 @@
         <div class='todos'>
             @foreach ($todos as $todo)
                 <div class='todo'>
-                    <h2 class='title'>{{ $todo->title }}</h2>
+                    <a href='/todos/'{{ $todos->id }}><h2 class='title'>{{ $todo->title }}</h2></a>
                     <p class='body'>{{ $todo->body }}</p>
                 </div>
             @endforeach
+        </div>
+        <div class='paginate'>
+            {{ $todos->links() }}
         </div>
     </body>
 </html>
